@@ -15,7 +15,7 @@ function Navbar() {
     { name: "Publications And Output", path: "/publications" },
     { name: "News", path: "/news" },
     { name: "Staff", path: "/staff" },
-    { name: "Contact Us", path: "/contactUs" }
+    { name: "Contact Us", path: "/contactUs" },
   ];
 
   return (
@@ -47,6 +47,16 @@ function Navbar() {
                 </Link>
               </li>
             ))}
+             <li>
+    <a
+      href="http://127.0.0.1:8000/department-dashboard/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-secondary hover:text-primary hover:bg-gray-50"
+    >
+      Login
+    </a>
+  </li>
           </ul>
 
           {/* Mobile Menu Button */}
