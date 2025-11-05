@@ -8,19 +8,19 @@ export default function Explore() {
       title: "Publication and outputs",
       description: "Explore our research papers, books, and See the tools and services we provide.",
       icon: FaBookOpen,
-      link: "/publications",
+      link: "/ServiceAndPublication",
     },
     {
       title: "Research and development",
       description: "Learn about our ongoing and past research projects.",
       icon: FaProjectDiagram,
-      link: "/mandate",
+      link: "/ServiceAndPublication",
     },
     {
       title: "Capacity Building",
       description: "PhD, MSc, and training programs we offer.",
       icon: FaUsers,
-      link: "/mandate",
+      link: "/ServiceAndPublication",
     },
     {
       title: "News",

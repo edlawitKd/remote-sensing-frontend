@@ -10,10 +10,7 @@ function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Mandate", path: "/mandate" },
-    { name: "Publications And Output", path: "/publications" },
-    { name: "News", path: "/news" },
+    { name: "Service And Publication", path: "/ServiceAndPublication" },
     { name: "Staff", path: "/staff" },
     { name: "Contact Us", path: "/contactUs" },
   ];
@@ -48,14 +45,13 @@ function Navbar() {
               </li>
             ))}
              <li>
-    <a
-      href="http://127.0.0.1:8000/department-dashboard/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-secondary hover:text-primary hover:bg-gray-50"
-    >
-      Login
-    </a>
+    <Link
+                  to="/rms/login"
+                  className="block px-3 py-2 rounded-md text-sm font-medium transition-colors text-secondary hover:text-primary hover:bg-gray-50"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Link>
   </li>
           </ul>
 

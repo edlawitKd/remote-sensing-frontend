@@ -10,7 +10,7 @@ export default function Staff() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/staff/") // Django API endpoint
+     .get("http://127.0.0.1:8000/staff/") // Django API endpoint
       .then((res) => setStaffList(res.data))
       .catch((err) => {
         console.error(err);

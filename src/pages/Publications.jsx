@@ -8,17 +8,14 @@ export default function Publications() {
   const [search, setSearch] = useState("");
   const [publicationData, setPublicationData] = useState([]);
   const [error, setError] = useState(null);
-
-  // Load More state
-  const [visibleCount, setVisibleCount] = useState(6); // initial items to show
-  const increment = 6; // how many more to show on click
+  const [visibleCount, setVisibleCount] = useState(6);
+  const increment = 6;
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/publications/publication/")
+    axios.get("http://127.0.0.1:8000/publications/publication/")
       .then((res) => setPublicationData(res.data))
       .catch((err) => {
-        console.error(err);
+        console.error("API Error:", err);
         setError("Failed to load publications.");
       });
   }, []);
@@ -44,13 +41,13 @@ export default function Publications() {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-secondary text-white py-20">
+      <section className="bg-white text-secondary py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Publications and Outputs
             </h1>
-            <p className="text-xl lg:text-2xl max-w-4xl mx-auto text-gray-200">
+            <p className="text-xl lg:text-2xl max-w-4xl mx-auto text-secondary">
               Explore our comprehensive collection of books, research papers,
               service, and products contributing to the advancement of remote
               sensing science.
@@ -99,6 +96,7 @@ export default function Publications() {
               key={item.id}
               type={item.type}
               title={item.title}
+              abstract={item.description}
               authors={item.authors}
               year={item.year}
               link={item.link}

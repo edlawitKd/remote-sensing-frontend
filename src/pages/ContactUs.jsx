@@ -8,7 +8,7 @@ export default function ContactUs() {
   function sendMessage(formData) {
     const data = Object.fromEntries(formData);
 
-    axios.post("http://127.0.0.1:8000/contact/messages/", data)
+   axios.post("http://127.0.0.1:8000/contact/submit/", data)
       .then((res) => {
         console.log("Message sent:", res.data);
         setSuccess("Message sent successfully!");
@@ -79,8 +79,8 @@ export default function ContactUs() {
     height="100%"
     frameBorder="0"
     scrolling="no"
-    src="https://www.openstreetmap.org/export/embed.html?bbox=38.761417%2C9.02002492%2C38.762928666668316%2C9.020001082935485&layer=mapnik&marker=9.0202%2C38.7635"
-  style={{ border: "1px solid black" }}
+      src="https://www.openstreetmap.org/export/embed.html?bbox=38.761915%2C9.019048%2C38.763915%2C9.021048&layer=mapnik&marker=9.020048%2C38.762915"
+      style={{ border: 'none' }}
   ></iframe>
 </div>
 
@@ -114,13 +114,7 @@ export default function ContactUs() {
           >
             <input type="text" name="name" placeholder="Your Name" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DD994D]" required />
             <input type="email" name="email" placeholder="Your Email" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DD994D]" required />
-            <select name="subject" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DD994D]" required>
-              <option value="">Select Subject</option>
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Student Information">Student Information</option>
-              <option value="Consultancy Service">Consultancy Service</option>
-              <option value="Other">Other</option>
-            </select>
+            <input type="text" name="subject" placeholder="Subject" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DD994D]" required />
             <textarea name="message" placeholder="Your Message" rows={5} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DD994D]" required />
             <button type="submit" className="flex items-center justify-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition duration-300">
               Send Message <Send size={18} />
